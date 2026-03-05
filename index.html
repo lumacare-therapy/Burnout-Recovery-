@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burnout Recovery | Reclaim Your Energy & Focus</title>
+    <meta name="description" content="Science-backed burnout recovery tools. Free, no login, and designed to help you feel human again. Start recovering in 5 minutes.">
+    
+    <!-- Browser Tab Icon - BRAIN -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%239f7aea'>🧠</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0719;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Cursor */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #9f7aea;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: difference;
+        }
+        
+        /* Animated Background */
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(125deg, #0a0a1a 0%, #1a0b2e 30%, #2d1b4a 70%, #4a2b7a 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(159, 122, 234, 0.3);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            from { transform: translateY(100vh) rotate(0deg); }
+            to { transform: translateY(-100vh) rotate(360deg); }
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 4rem;
+            animation: fadeInDown 1s ease;
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            filter: drop-shadow(0 0 15px #9f7aea);
+            animation: pulse 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px #9f7aea); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 0 25px #b794f4); }
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #9f7aea, #b794f4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            color: #cbd5e0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #9f7aea, #4fd1c5);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #ffffff;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: rgba(79, 209, 197, 0.1);
+            color: #4fd1c5;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(79, 209, 197, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease 0.2s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+        
+        .hero-content {
+            animation: slideInLeft 1s ease 0.3s both;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff, #9f7aea, #b794f4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #cbd5e0;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+        
+        .hero-visual {
+            position: relative;
+            animation: slideInRight 1s ease 0.3s both;
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .floating-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(159, 122, 234, 0.2);
+            border-radius: 30px;
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .floating-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(159,122,234,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .burnout-meter {
+            margin-bottom: 1.5rem;
+        }
+        
+        .meter-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: #cbd5e0;
+        }
+        
+        .meter-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .meter-fill {
+            height: 100%;
+            width: 78%;
+            background: linear-gradient(90deg, #9f7aea, #4fd1c5);
+            border-radius: 5px;
+            animation: fillBar 2s ease-out;
+        }
+        
+        @keyframes fillBar {
+            from { width: 0; }
+            to { width: 78%; }
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #9f7aea, #4fd1c5);
+            color: white;
+            box-shadow: 0 10px 20px -5px rgba(159, 122, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -5px rgba(159, 122, 234, 0.5);
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid rgba(159, 122, 234, 0.5);
+            color: white;
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            border-color: #9f7aea;
+            transform: translateY(-3px);
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 6rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: #9f7aea;
+            box-shadow: 0 20px 40px -10px rgba(159, 122, 234, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #9f7aea, #4fd1c5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #cbd5e0;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Symptoms Grid */
+        .symptoms {
+            margin-bottom: 6rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, #9f7aea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #cbd5e0;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+        
+        .symptoms-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .symptom-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s;
+            animation: fadeInItem 0.5s ease forwards;
+            opacity: 0;
+        }
+        
+        .symptom-item:nth-child(1) { animation-delay: 0.1s; }
+        .symptom-item:nth-child(2) { animation-delay: 0.2s; }
+        .symptom-item:nth-child(3) { animation-delay: 0.3s; }
+        .symptom-item:nth-child(4) { animation-delay: 0.4s; }
+        .symptom-item:nth-child(5) { animation-delay: 0.5s; }
+        .symptom-item:nth-child(6) { animation-delay: 0.6s; }
+        .symptom-item:nth-child(7) { animation-delay: 0.7s; }
+        .symptom-item:nth-child(8) { animation-delay: 0.8s; }
+        
+        @keyframes fadeInItem {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .symptom-item:hover {
+            background: rgba(159, 122, 234, 0.1);
+            border-color: #9f7aea;
+            transform: translateX(10px);
+        }
+        
+        .symptom-icon {
+            font-size: 1.5rem;
+            color: #9f7aea;
+        }
+        
+        /* Recovery Path */
+        .recovery-path {
+            margin-bottom: 6rem;
+        }
+        
+        .path-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+        
+        .path-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .path-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            top: 30px;
+            right: -10px;
+            color: #9f7aea;
+            font-size: 1.5rem;
+            font-weight: 300;
+            animation: pulse 2s infinite;
+        }
+        
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #9f7aea, #4fd1c5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 10px 20px -5px #9f7aea;
+            animation: glow 2s infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 10px 20px -5px #9f7aea; }
+            50% { box-shadow: 0 20px 30px 0px #b794f4; }
+        }
+        
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        
+        .step-desc {
+            font-size: 0.9rem;
+            color: #cbd5e0;
+        }
+        
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .tool-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #9f7aea, #4fd1c5);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-10px);
+            border-color: #9f7aea;
+        }
+        
+        .tool-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .tool-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #9f7aea, #4fd1c5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .tool-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #4fd1c5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .tool-link:hover {
+            color: #9f7aea;
+            transform: translateX(5px);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            margin: 6rem 0;
+            position: relative;
+        }
+        
+        .testimonials-track {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 2rem 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-behavior: smooth;
+        }
+        
+        .testimonials-track::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .testimonial-card {
+            min-width: 350px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: #9f7aea;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #9f7aea, #4fd1c5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .author-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: #9f7aea;
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .faq-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .faq-item:hover {
+            border-color: #9f7aea;
+            transform: translateX(5px);
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #9f7aea;
+        }
+        
+        .faq-answer {
+            margin-top: 1rem;
+            color: #cbd5e0;
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 4rem;
+            background: linear-gradient(135deg, rgba(159, 122, 234, 0.1), rgba(79, 209, 197, 0.1));
+            border-radius: 50px;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(159, 122, 234, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, #9f7aea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background: linear-gradient(135deg, #9f7aea, #4fd1c5);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -10px rgba(159, 122, 234, 0.5);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        /* Footer */
+        .footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 3rem;
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo-icon {
+            font-size: 2rem;
+        }
+        
+        .footer-logo-text {
+            background: linear-gradient(135deg, #9f7aea, #4fd1c5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .footer-text {
+            color: #cbd5e0;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9f7aea;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: #9f7aea;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: #cbd5e0;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #9f7aea;
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 2rem 0;
+            color: #6b7280;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .hero-content { order: 2; }
+            .hero-visual { order: 1; }
+            .path-grid { grid-template-columns: repeat(3, 1fr); }
+            .path-step:nth-child(4)::after,
+            .path-step:nth-child(5)::after { display: none; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .stats { grid-template-columns: 1fr; }
+            .symptoms-grid { grid-template-columns: 1fr; }
+            .path-grid { grid-template-columns: 1fr; }
+            .path-step::after { display: none; }
+            .tools-grid { grid-template-columns: 1fr; }
+            .faq-grid { grid-template-columns: 1fr; }
+            .footer { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    
+    <!-- Animated Background -->
+    <div class="gradient-bg"></div>
+    
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <!-- Header with Logo -->
+        <header class="header">
+            <a href="https://lumacare-app.vercel.app" class="logo">
+                <span class="logo-icon">🧠</span>
+                <span class="logo-text">LumaCare</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Science</a>
+                <a href="#" class="nav-link">Tools</a>
+                <a href="#" class="nav-link">Stories</a>
+            </nav>
+            <div>
+                <span class="badge" style="margin: 0;">⚡ Free • No Login</span>
+            </div>
+        </header>
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="badge">✨ RECOVERY STARTS HERE</div>
+                <h1 class="hero-title">Burnout isn't the end.<br>It's a signal.</h1>
+                <p class="hero-subtitle">Science-backed tools to help you recover, regain focus, and feel human again. No login required. Start in 5 minutes.</p>
+                <a href="https://lumacare-app.vercel.app" class="btn btn-primary">Start Recovery Journey →</a>
+                <a href="#learn" class="btn btn-outline">Learn More</a>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="burnout-meter">
+                        <div class="meter-label">
+                            <span>Burnout Level</span>
+                            <span>78%</span>
+                        </div>
+                        <div class="meter-bar">
+                            <div class="meter-fill"></div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; justify-content: space-between;">
+                        <div>
+                            <div style="font-size: 2rem; font-weight: 700; color: #9f7aea;">5</div>
+                            <div style="font-size: 0.9rem; color: #cbd5e0;">Days to feel better</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; font-weight: 700; color: #4fd1c5;">21</div>
+                            <div style="font-size: 0.9rem; color: #cbd5e0;">Days to recover</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-number">76%</div>
+                <div class="stat-label">of freelancers report burnout</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3x</div>
+                <div class="stat-label">higher risk for remote workers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5min</div>
+                <div class="stat-label">to start feeling relief</div>
+            </div>
+        </section>
+        
+        <!-- Symptoms Checker -->
+        <section class="symptoms" id="symptoms">
+            <h2 class="section-title">Do You Have Burnout?</h2>
+            <p class="section-subtitle">Check the ones that feel familiar (honestly, no judgment)</p>
+            
+            <div class="symptoms-grid">
+                <div class="symptom-item">
+                    <span class="symptom-icon">😴</span>
+                    <span>Exhausted all the time, even after sleep</span>
+                </div>
+                <div class="symptom-item">
+                    <span class="symptom-icon">😤</span>
+                    <span>Irritable or impatient with everyone</span>
+                </div>
+                <div class="symptom-item">
+                    <span class="symptom-icon">🔄</span>
+                    <span>Dreading work you used to enjoy</span>
+                </div>
+                <div class="symptom-item">
+                    <span class="symptom-icon">🧩</span>
+                    <span>Can't concentrate or focus</span>
+                </div>
+                <div class="symptom-item">
+                    <span class="symptom-icon">🥀</span>
+                    <span>Feeling hopeless or detached</span>
+                </div>
+                <div class="symptom-item">
+                    <span class="symptom-icon">🤒</span>
+                    <span>Getting sick more often</span>
+                </div>
+                <div class="symptom-item">
+                    <span class="symptom-icon">🍽️</span>
+                    <span>Eating too much or too little</span>
+                </div>
+                <div class="symptom-item">
+                    <span class="symptom-icon">📉</span>
+                    <span>Productivity is crashing</span>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: #4fd1c5; font-size: 1.2rem;">3 or more? You're not broken. You're burned out. And there's a way back.</p>
+            </div>
+        </section>
+        
+        <!-- Recovery Path -->
+        <section class="recovery-path">
+            <h2 class="section-title">The 5-Step Recovery Path</h2>
+            <p class="section-subtitle">Small steps. Real progress. No pressure.</p>
+            
+            <div class="path-grid">
+                <div class="path-step">
+                    <div class="step-circle">1</div>
+                    <div class="step-title">Stop</div>
+                    <div class="step-desc">Actually pause. 5 minutes. Nothing else.</div>
+                </div>
+                <div class="path-step">
+                    <div class="step-circle">2</div>
+                    <div class="step-title">Dump</div>
+                    <div class="step-desc">Get everything out of your head</div>
+                </div>
+                <div class="path-step">
+                    <div class="step-circle">3</div>
+                    <div class="step-title">One Win</div>
+                    <div class="step-desc">Complete ONE small task</div>
+                </div>
+                <div class="path-step">
+                    <div class="step-circle">4</div>
+                    <div class="step-title">Body</div>
+                    <div class="step-desc">Reconnect with physical sensation</div>
+                </div>
+                <div class="path-step">
+                    <div class="step-circle">5</div>
+                    <div class="step-title">Rest</div>
+                    <div class="step-desc">Guilt-free recovery time</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Tools That Help -->
+        <section class="tools">
+            <h2 class="section-title">Tools That Actually Help</h2>
+            <p class="section-subtitle">Free. No login. Just relief.</p>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🧘</div>
+                    <div class="tool-title">Box Breathing</div>
+                    <p style="color: #cbd5e0; margin: 1rem 0;">4-4-4-4 pattern to calm your nervous system in minutes.</p>
+                    <a href="https://lumacare-app.vercel.app" class="tool-link">Try it now →</a>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">📌</div>
+                    <div class="tool-title">Priority Matrix</div>
+                    <p style="color: #cbd5e0; margin: 1rem 0;">Sort tasks by urgent vs important. Stop the mental spin.</p>
+                    <a href="https://lumacare-app.vercel.app" class="tool-link">Try it now →</a>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">🌱</div>
+                    <div class="tool-title">5-4-3-2-1 Grounding</div>
+                    <p style="color: #cbd5e0; margin: 1rem 0;">Anchor yourself in the present moment.</p>
+                    <a href="https://lumacare-app.vercel.app" class="tool-link">Try it now →</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h2 class="section-title">Real People, Real Recovery</h2>
+            <p class="section-subtitle">Stories from people who've been where you are</p>
+            
+            <div class="testimonials-track">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I was running on empty for months. The Priority Matrix helped me see that most of my 'urgent' tasks weren't actually important. Game changer."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Sarah</h4>
+                            <p>Freelance Designer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The breathing exercises got me through a panic attack at 2am. No signup, no cost, just help when I needed it most."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Marcus</h4>
+                            <p>Remote Developer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I didn't realize how much mental clutter was weighing me down until I dumped it all out. I could literally feel my shoulders relax."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <h4>Jess</h4>
+                            <p>Writer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ -->
+        <section class="faq">
+            <h2 class="section-title">Common Questions</h2>
+            <p class="section-subtitle">Everything you're wondering (probably)</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does burnout recovery take?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        It depends. Weeks to months for mild burnout. Months to a year for severe. The key is consistency, not speed.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need to pay for LumaCare?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Nope. All core tools are completely free. No login required. Start in 5 seconds.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I use this if I'm not a freelancer?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely. Anyone feeling overwhelmed, anxious, or burned out is welcome here.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What if I need more help?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        These tools are for daily support. If you're struggling deeply, please reach out to a mental health professional. You deserve real help.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2 class="cta-title">Start Recovering Today</h2>
+            <p style="color: #cbd5e0; font-size: 1.2rem; max-width: 600px; margin: 0 auto; position: relative; z-index: 1;">No login. No credit card. Just tools that work.</p>
+            <a href="https://lumacare-app.vercel.app" class="cta-button">👉 Start Your Recovery →</a>
+        </section>
+        
+        <!-- Footer with Logo -->
+        <footer class="footer">
+            <div>
+                <div class="footer-logo">
+                    <span class="footer-logo-icon">🧠</span>
+                    <span class="footer-logo-text">LumaCare</span>
+                </div>
+                <p class="footer-text">Mental wellness for freelancers and remote workers.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Tools</h4>
+                <a href="https://lumacare-app.vercel.app">Priority Matrix</a>
+                <a href="https://lumacare-app.vercel.app">Box Breathing</a>
+                <a href="https://lumacare-app.vercel.app">Grounding</a>
+                <a href="https://lumacare-app.vercel.app">SOS Calm</a>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <a href="#">Blog</a>
+                <a href="#">Science</a>
+                <a href="#">FAQ</a>
+                <a href="#">Contact</a>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+            </div>
+        </footer>
+        
+        <div class="copyright">
+            © 2026 LumaCare. All rights reserved. Made for humans.
+        </div>
+    </div>
+    
+    <script>
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        
+        // Particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.width = particle.style.height = Math.random() * 6 + 2 + 'px';
+            particle.style.background = `rgba(${159 + Math.random() * 50}, ${122 + Math.random() * 50}, ${234}, ${0.2 + Math.random() * 0.3})`;
+            particlesContainer.appendChild(particle);
+        }
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+                const toggle = item.querySelector('.faq-toggle');
+                toggle.textContent = item.classList.contains('active') ? '−' : '+';
+            });
+        });
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            document.querySelector('.gradient-bg').style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
+</body>
+</html>
